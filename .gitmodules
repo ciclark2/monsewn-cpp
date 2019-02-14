@@ -1,3 +1,3 @@
-[submodule "libtorrent"]
+[submodule "vendors/libtorrent"]
 	path = vendors/libtorrent
 	url = https://github.com/arvidn/libtorrent.git
