@@ -1,3 +1,6 @@
 [submodule "libtorrent"]
 	path = libtorrent
 	url = https://github.com/arvidn/libtorrent.git
+[submodule "vendors/ultralight"]
+	path = vendors/ultralight
+	url = https://github.com/ultralight-ux/ultralight.git
