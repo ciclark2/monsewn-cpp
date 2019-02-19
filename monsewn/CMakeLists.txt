@@ -1,1 +1,1 @@
-add_executable(Monsewn monsewn.cpp monsewn.hpp)
+add_executable(Monsewn monsewn.cpp)
