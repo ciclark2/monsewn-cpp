@@ -1,2 +1,2 @@
-add_executable(Monsewn monsewn.cpp)
-target_link_libraries(Monsewn CONAN_PKG::boost)
+add_executable(Monsewn main.cpp)
+target_link_libraries(Monsewn ${CONAN_LIBS})

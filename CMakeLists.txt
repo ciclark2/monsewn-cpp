@@ -11,7 +11,9 @@ endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 conan_cmake_run(REQUIRES boost/1.72.0
-                BASIC_SETUP CMAKE_TARGETS
+                REQUIRES imgui/1.76
+                REQUIRES libtorrent/1.2.3
+                BASIC_SETUP
                 BUILD missing)
 
 add_subdirectory(monsewn)
