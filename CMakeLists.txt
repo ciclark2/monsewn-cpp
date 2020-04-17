@@ -11,6 +11,7 @@ endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 conan_cmake_run(REQUIRES boost/1.72.0
+                REQUIRES gtest/1.10.0
                 REQUIRES imgui/1.76
                 REQUIRES libtorrent/1.2.3
                 BASIC_SETUP
