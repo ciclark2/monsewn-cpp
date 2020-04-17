@@ -1,13 +1,13 @@
 set(include_list
-	downloader.h
+	Downloader.h
 	)
 
 set(source_list
-	downloader.cpp
+	Downloader.cpp
 	)
 
 add_library(mon ${source_list} ${include_list})
+target_link_libraries(mon ${CONAN_LIBS})
 
-add_executable(Monsewn main.cpp "downloader.cpp")
-
-target_link_libraries(Monsewn ${CONAN_LIBS} mon)
+add_executable(monsewn main.cpp)
+target_link_libraries(monsewn ${CONAN_LIBS} mon)
