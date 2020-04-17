@@ -1,4 +1,7 @@
-cmake_minimum_required(VERSION 3.8)
+project(monsewn)
 
-include(cmake/vendors.cmake)
-include(cmake/project.cmake)
+cmake_minimum_required(VERSION 3.11)
+
+include(cmake/conan.cmake)
+
+add_subdirectory(monsewn)
