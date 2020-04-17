@@ -1,4 +1,4 @@
-#include "downloader.h"
+#include "Downloader.h"
 
 #include <libtorrent/session.hpp>
 #include <libtorrent/add_torrent_params.hpp>
