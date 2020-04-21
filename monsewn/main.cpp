@@ -1,6 +1,9 @@
-#include "Downloader.h"
+#include "../torrent/Downloader.h"
+#include "../imgui/Window.h"
 
 #include <boost/program_options.hpp>
+
+#include <imgui.h>
 
 #include <iostream>
 #include <string>
@@ -44,7 +47,8 @@ int main(int argc, char* argv[]) try
         return 0;
     }
 
-    Monsewn::Downloader downloader(magnet_uri);
+    //Monsewn::Downloader downloader(magnet_uri);
+    return Window();
 
     return 0;
 

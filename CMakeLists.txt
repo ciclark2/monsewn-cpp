@@ -11,10 +11,14 @@ endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 conan_cmake_run(REQUIRES boost/1.72.0
+                REQUIRES glew/2.1.0@bincrafters/stable
+                REQUIRES glfw/3.3.2@bincrafters/stable
                 REQUIRES gtest/1.10.0
                 REQUIRES imgui/1.76
                 REQUIRES libtorrent/1.2.3
                 BASIC_SETUP
                 BUILD missing)
 
+add_subdirectory(imgui)
+add_subdirectory(torrent)
 add_subdirectory(monsewn)
