@@ -21,4 +21,7 @@ conan_cmake_run(REQUIRES boost/1.72.0
 
 add_subdirectory(imgui)
 add_subdirectory(torrent)
+
+include_directories(".")
+
 add_subdirectory(monsewn)

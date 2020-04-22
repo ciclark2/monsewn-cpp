@@ -1,9 +1,7 @@
-#include "../torrent/Downloader.h"
-#include "../imgui/Window.h"
+#include <torrent/Downloader.h>
+#include <imgui/Window.h>
 
 #include <boost/program_options.hpp>
-
-#include <imgui.h>
 
 #include <iostream>
 #include <string>
