@@ -25,19 +25,14 @@ set(CONAN_REQUIRES_LIST
     REQUIRES libtorrent/1.2.3
     )
 
-set(CONAN_BUILD_LIST
-    BUILD missing)
-
 if(UNIX AND NOT APPLE)
     list(APPEND CONAN_REQUIRES_LIST
          REQUIRES mesa/20.0.1@bincrafters/stable)
-    list(APPEND CONAN_BUILD_LIST
-         BUILD mesa)
 endif()
 
 conan_cmake_run(${CONAN_REQUIRES_LIST}
                 BASIC_SETUP
-                ${CONAN_BUILD_LIST}
+                BUILD missing
                 )
 
 add_subdirectory(download)
