@@ -8,5 +8,5 @@ set(source_list
 	imgui_impl_opengl3.cpp
 	)
 
-add_library(imui ${source_list} ${include_list})
-target_link_libraries(imui ${CONAN_LIBS})
+add_library(window ${source_list} ${include_list})
+target_link_libraries(window ${CONAN_LIBS})
