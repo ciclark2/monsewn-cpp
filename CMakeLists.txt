@@ -40,8 +40,8 @@ conan_cmake_run(${CONAN_REQUIRES_LIST}
                 ${CONAN_BUILD_LIST}
                 )
 
-add_subdirectory(imgui)
-add_subdirectory(torrent)
+add_subdirectory(download)
+add_subdirectory(window)
 
 include_directories(".")
 
