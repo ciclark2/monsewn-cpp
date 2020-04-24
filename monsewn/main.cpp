@@ -1,5 +1,5 @@
-#include <torrent/Downloader.h>
-#include <imgui/Window.h>
+#include <download/Downloader.h>
+#include <window/Window.h>
 
 #include <boost/program_options.hpp>
 
