@@ -13,19 +13,36 @@ endif()
 
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 
-conan_cmake_run(REQUIRES boost/1.72.0
-                REQUIRES glew/2.1.0@bincrafters/stable
-                REQUIRES glfw/3.3.2@bincrafters/stable
-                REQUIRES gtest/1.10.0
-                REQUIRES imgui/1.76
-                REQUIRES libtorrent/1.2.3
-                REQUIRES libx11/1.6.8@bincrafters/stable
-                REQUIRES mesa/20.0.1@bincrafters/stable
+conan_add_remote(NAME bincrafters
+                 URL https://api.bintray.com/conan/bincrafters/public-conan)
+
+set(CONAN_REQUIRES_LIST
+    REQUIRES boost/1.72.0
+    REQUIRES glew/2.1.0@bincrafters/stable
+    REQUIRES glfw/3.3.2@bincrafters/stable
+    REQUIRES gtest/1.10.0
+    REQUIRES imgui/1.76
+    REQUIRES libtorrent/1.2.3
+    )
+
+set(CONAN_BUILD_LIST
+    BUILD MISSING)
+
+if(UNIX AND NOT APPLE)
+    list(APPEND ${CONAN_REQUIRES_LIST}
+         REQUIRES mesa/20.0.1@bincrafters/stable)
+    list(APPEND ${CONAN_BUILD_LIST}
+         BUILD mesa)
+endif()
+
+conan_cmake_run(${CONAN_REQUIRES_LIST}
                 BASIC_SETUP
-                BUILD missing
-                BUILD mesa
+                ${CONAN_BUILD_LIST}
                 )
 
 add_subdirectory(imgui)
 add_subdirectory(torrent)
+
+include_directories(".")
+
 add_subdirectory(monsewn)
