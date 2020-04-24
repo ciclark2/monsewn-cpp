@@ -26,12 +26,12 @@ set(CONAN_REQUIRES_LIST
     )
 
 set(CONAN_BUILD_LIST
-    BUILD MISSING)
+    BUILD missing)
 
 if(UNIX AND NOT APPLE)
-    list(APPEND ${CONAN_REQUIRES_LIST}
+    list(APPEND CONAN_REQUIRES_LIST
          REQUIRES mesa/20.0.1@bincrafters/stable)
-    list(APPEND ${CONAN_BUILD_LIST}
+    list(APPEND CONAN_BUILD_LIST
          BUILD mesa)
 endif()
 
