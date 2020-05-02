@@ -25,7 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: setup
-      run:  python3 -m pip install conan
+      run:  Python.exe -m pip install conan
     - name: configure
       run: mkdir build && cd build && cmake ..
     - name: build
