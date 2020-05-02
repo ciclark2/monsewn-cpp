@@ -1,2 +1,2 @@
 Monsewn
-![](https://github.com/cclark/monsewn/workflows/.github/workflows/ccpp.yml/badge.svg)
+![](https://github.com/cclark/monsewn/workflows/CI/badge.svg)
