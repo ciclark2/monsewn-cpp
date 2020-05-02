@@ -25,10 +25,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: setup
-      run:  Python.exe -m pip install conan
+      run:  python.exe -m pip install conan
     - name: configure
       run: mkdir build && cd build && cmake ..
-    - name: build
-      run: cmake --build build --config Debug
-    - name: test
-      run: cd build && ctest
+    #- name: build
+    #  run: cmake --build build --config Debug
+    #- name: test
+    #  run: cd build && ctest
