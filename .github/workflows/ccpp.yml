@@ -10,7 +10,7 @@ jobs:
     - name: setup
       run:  python3 -m pip install -U pip setuptools && python3 -m pip install wheel && python3 -m pip install conan
     - name: configure
-      run: mkdir build && cd build && PATH=$PATH:/home/runner/.local/bin cmake ..
+      run: mkdir build && cd build && PATH=$PATH:/home/runner/.local/bin cmake -DCMAKE_BUILD_TYPE=Debug ..
     - name: build
       run: cmake --build build
     - name: test
