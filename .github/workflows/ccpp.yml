@@ -6,7 +6,7 @@ jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: setup
       run:  python3 -m pip install -U pip setuptools && python3 -m pip install wheel && python3 -m pip install conan
     - name: configure
@@ -19,7 +19,7 @@ jobs:
   build-macos:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: setup
       run:  python3 -m pip install conan
     - name: configure
@@ -32,7 +32,7 @@ jobs:
   build-windows:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: setup
       run:  python.exe -m pip install conan
     - name: configure
