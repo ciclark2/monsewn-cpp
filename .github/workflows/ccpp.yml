@@ -4,24 +4,33 @@ on: [push]
 
 jobs:
   build-ubuntu:
-
     runs-on: ubuntu-latest
-    
     steps:
     - uses: actions/checkout@v1
     - name: setup
       run:  python3 -m pip install -U pip setuptools && python3 -m pip install wheel && python3 -m pip install conan
     - name: configure
-      run: mkdir build && cd build && PATH=$PATH:/home/runner/.local/bin cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-Werror" ..
+      run: mkdir build && cd build && PATH=$PATH:/home/runner/.local/bin cmake ..
+    - name: build
+      run: cmake --build build
+    - name: test
+      run: cd build && ctest
+  
+  build-macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: setup
+      run:  python3 -m pip install conan
+    - name: configure
+      run: mkdir build && cd build && cmake ..
     - name: build
       run: cmake --build build
     - name: test
       run: cd build && ctest
 
   build-windows:
-
     runs-on: windows-latest
-    
     steps:
     - uses: actions/checkout@v1
     - name: setup
@@ -29,6 +38,6 @@ jobs:
     - name: configure
       run: mkdir build && cd build && cmake ..
     #- name: build
-    #  run: cmake --build build --config Debug
+    #  run: cmake --build build
     #- name: test
     #  run: cd build && ctest
